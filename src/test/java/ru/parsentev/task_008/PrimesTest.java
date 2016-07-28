@@ -16,7 +16,6 @@ import static org.hamcrest.core.Is.is;
  * @author parsentev
  * @since 28.07.2016
  */
-@Ignore
 public class PrimesTest {
     @Test
     public void calc() {
