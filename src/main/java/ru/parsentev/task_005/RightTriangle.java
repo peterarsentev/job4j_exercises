@@ -28,17 +28,6 @@ public class RightTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-        double ab = this.first.distanceTo(this.second);
-        double ac = this.first.distanceTo(this.third);
-        double bc = this.second.distanceTo(this.third);
-        return (this.round(pow(ab, 2)) == this.round(pow(ac, 2) + pow(bc, 2))) ||
-                (this.round(pow(ac, 2)) == this.round(pow(ab, 2) + pow(bc, 2))) ||
-                (this.round(pow(bc, 2)) == this.round(pow(ab, 2) + pow(ac, 2)));
-    }
-
-    private double round(double value) {
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(2, RoundingMode.HALF_UP);
-        return bd.doubleValue();
+        return super.exists();
     }
 }
