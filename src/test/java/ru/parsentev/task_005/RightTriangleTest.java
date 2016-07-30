@@ -37,7 +37,7 @@ public class RightTriangleTest {
     @Test
     public void notRight() {
         Point first = new Point(0, 0);
-        Point second = new Point(2, 1);
+        Point second = new Point(2, 2);
         Point third = new Point(0, 5);
         boolean result = new RightTriangle(first, second, third).exists();
         assertThat(result, is(false));

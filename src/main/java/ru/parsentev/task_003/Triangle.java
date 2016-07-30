@@ -15,9 +15,9 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class Triangle {
     private static final Logger log = getLogger(Triangle.class);
 
-    private final Point first;
-    private final Point second;
-    private final Point third;
+    protected final Point first;
+    protected final Point second;
+    protected final Point third;
 
     public Triangle(final Point first, final Point second, final Point third) {
         this.first = first;
