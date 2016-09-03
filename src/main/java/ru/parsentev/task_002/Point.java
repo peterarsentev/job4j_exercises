@@ -1,16 +1,11 @@
 package ru.parsentev.task_002;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-import static java.lang.Math.*;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * Class Point defines a point in coodrional system (x, y).
+ * Class Point defines a point in coordination system (x, y).
  * @author parsentev
  * @since 19.07.2016
  */
@@ -26,8 +21,6 @@ public class Point {
     }
 
     public double distanceTo(final Point point) {
-        BigDecimal bd = new BigDecimal(sqrt(pow(abs(this.x - point.x), 2) + pow(abs(this.y - point.y), 2)));
-        bd = bd.setScale(2, RoundingMode.HALF_UP);
-        return bd.doubleValue();
+        throw new UnsupportedOperationException();
     }
 }
