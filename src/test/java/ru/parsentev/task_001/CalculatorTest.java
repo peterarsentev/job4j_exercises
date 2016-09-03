@@ -20,9 +20,9 @@ public class CalculatorTest {
     }
 
     @Test
-    public void whenSubstractOneOnOneThenResultZero() throws Exception {
+    public void whenSubtractOneOnOneThenResultZero() throws Exception {
         Calculator calc = new Calculator();
-        calc.substract(1d, 1d);
+        calc.subtract(1d, 1d);
         assertThat(calc.getResult(), is(0d));
     }
 

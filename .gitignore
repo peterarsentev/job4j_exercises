@@ -1,6 +1,7 @@
 *.class
 .idea
 .iml
+*.iml
 target
 
 # Mobile Tools for Java (J2ME)
