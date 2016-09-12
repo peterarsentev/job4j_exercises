@@ -1,8 +1,5 @@
 package ru.parsentev.task_022;
 
-/**
- * Created by parsentev on 08.09.2016.
- */
 public class Board {
     private static final int LIMIT = 5;
     private final Cell[][] cells;
@@ -28,23 +25,17 @@ public class Board {
 
     private Way isWinner(int x, int y, int stepCount) {
         Way result = new Way(false, stepCount);
-        if (stepCount <= LIMIT) {
-            if (x >= 0 && y >= 0 && y < this.size_y) {
-                if (x >= this.size_x) {
-                    x -= this.size_x;
-                }
-                if (this.cells[x][y] == Cell.WIN) {
-                    result = new Way(true, stepCount);
-                } else if (this.cells[x][y] != Cell.TREE) {
-                    for (Step step : this.directs) {
-                        Way way = this.isWinner(x + step.x, y + step.y, stepCount + 1);
-                        if (way.win) {
-                            if (!result.win) {
-                                result = way;
-                            } else if (result.size > way.size) {
-                                result = way;
-                            }
-                         }
+        if (stepCount <= LIMIT && x >= 0 && y >= 0 && y < this.size_y) {
+            if (x >= this.size_x) {
+                x -= this.size_x;
+            }
+            if (this.cells[x][y] == Cell.WIN) {
+                result = new Way(true, stepCount);
+            } else if (this.cells[x][y] != Cell.TREE) {
+                for (Step step : this.directs) {
+                    Way way = this.isWinner(x + step.x, y + step.y, stepCount + 1);
+                    if (way.win && (!result.win || result.size > way.size)) {
+                        result = way;
                     }
                 }
             }

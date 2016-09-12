@@ -28,6 +28,12 @@ public class Square {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        final double ab = this.first.distanceTo(this.second);
+        final double bc = this.second.distanceTo(this.third);
+        final double cd = this.third.distanceTo(this.fourth);
+        final double da = this.fourth.distanceTo(this.first);
+        final double ac = this.first.distanceTo(this.third);
+        final double bd = this.second.distanceTo(this.fourth);
+        return ab == bc && bc == cd && cd == da && ac == bd;
     }
 }
