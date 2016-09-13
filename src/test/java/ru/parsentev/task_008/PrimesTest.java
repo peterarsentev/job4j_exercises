@@ -23,4 +23,11 @@ public class PrimesTest {
         List<Integer> result = primes.calc();
         assertThat(result, is(asList(1, 2, 3)));
     }
+
+    @Test
+    public void inFive() {
+        Primes primes = new Primes(5);
+        List<Integer> result = primes.calc();
+        assertThat(result, is(asList(1, 2, 3, 5)));
+    }
 }

@@ -21,6 +21,30 @@ public class Expression {
     }
 
     public double calc() {
-        throw new UnsupportedOperationException();
+        final String[] values = this.expr.split("(\\+|-|/|\\*)");
+        if (values.length == 2) {
+            final int size =  values[0].length();
+            return this.calc(
+                    Double.valueOf(values[0]),
+                    Double.valueOf(values[1]),
+                    this.expr.substring(size + 1, size + 2)
+            );
+        } else {
+            throw new IllegalStateException();
+        }
+    }
+
+    public double calc(double first, double second, String op) {
+        final double result;
+        if ("+".equals(op)) {
+            result = first + second;
+        } else if ("-".equals(op)) {
+            result = first - second;
+        } else if ("/".equals(op)) {
+            result = first / second;
+        } else {
+            result = first * second;
+        }
+        return result;
     }
 }

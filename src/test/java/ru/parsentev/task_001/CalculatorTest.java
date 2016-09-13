@@ -52,4 +52,11 @@ public class CalculatorTest {
         calc.expand(1d, 1d);
         assertThat(calc.getResult(), is(1d));
     }
+
+    @Test
+    public void whenExpandTwoOnTwoThenResultFour() throws Exception {
+        Calculator calc = new Calculator();
+        calc.expand(2d, 2d);
+        assertThat(calc.getResult(), is(4d));
+    }
 }

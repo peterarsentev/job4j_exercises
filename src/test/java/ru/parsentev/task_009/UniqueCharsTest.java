@@ -13,6 +13,13 @@ import static org.junit.Assert.*;
  */
 public class UniqueCharsTest {
     @Test
+    public void whenOneCharThenOneUnique() {
+        UniqueChars unique = new UniqueChars("1");
+        int result = unique.unique();
+        assertThat(result, is(1));
+    }
+
+    @Test
     public void hasNotUnique() {
         UniqueChars unique = new UniqueChars("2+2");
         int result = unique.unique();
@@ -24,5 +31,12 @@ public class UniqueCharsTest {
         UniqueChars unique = new UniqueChars("123");
         int result = unique.unique();
         assertThat(result, is(3));
+    }
+
+    @Test
+    public void onlyDublicate() {
+        UniqueChars unique = new UniqueChars("1111");
+        int result = unique.unique();
+        assertThat(result, is(1));
     }
 }

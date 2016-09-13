@@ -38,7 +38,7 @@ public class Calculator {
 
     public void expand(double first, double second) {
         this.result = first;
-        for (int index=0;index!=second;index++) {
+        for (int index=1;index!=second;index++) {
             this.result *= first;
         }
     }

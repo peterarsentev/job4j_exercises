@@ -24,4 +24,9 @@ public class ExpressionTest {
     public void noValid() {
         new Expression("2+").calc();
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void whenMultiOpsThenException() {
+        new Expression("2++").calc();
+    }
 }
