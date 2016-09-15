@@ -14,16 +14,44 @@ import static org.junit.Assert.*;
  */
 public class BracketsTest {
     @Test
-    public void valid() {
+    public void whenExpSequenceBracketsThenCorrect() {
         Brackets brackets = new Brackets("()()()");
         boolean result = brackets.isCorrect();
         assertThat(result, is(true));
     }
 
     @Test
-    public void inValid() {
+    public void whenExpOnlyRigthBracketsThenInCorrect() {
         Brackets brackets = new Brackets("(");
         boolean result = brackets.isCorrect();
         assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenExpHasInnerBracketsThenCorrect() {
+        Brackets brackets = new Brackets("(())");
+        boolean result = brackets.isCorrect();
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenExpHasOnlyLeftBracketsThenIncorrect() {
+        Brackets brackets = new Brackets("((");
+        boolean result = brackets.isCorrect();
+        assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenExpHasOnlyRightBracketsThenIncorrect() {
+        Brackets brackets = new Brackets("))");
+        boolean result = brackets.isCorrect();
+        assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenExpComplexThenCorrect() {
+        Brackets brackets = new Brackets("()(()((())))");
+        boolean result = brackets.isCorrect();
+        assertThat(result, is(true));
     }
 }

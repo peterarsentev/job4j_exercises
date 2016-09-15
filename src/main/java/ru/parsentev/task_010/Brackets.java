@@ -19,6 +19,20 @@ public class Brackets {
     }
 
     public boolean isCorrect() {
-        throw new UnsupportedOperationException();
+        final char[] stack = new char[this.line.length()];
+        int index = 0;
+        int pos = 0;
+        while (pos < this.line.length()) {
+            if (pos + 1 < this.line.length() && this.line.charAt(pos) == '(' && this.line.charAt(pos + 1) == ')') {
+                pos += 2;
+            } else if (index > 0 && stack[index - 1] == '(' && this.line.charAt(pos) == ')') {
+                index--;
+                pos++;
+            } else {
+                stack[index++] = this.line.charAt(pos);
+                pos++;
+            }
+        }
+        return index == 0;
     }
 }

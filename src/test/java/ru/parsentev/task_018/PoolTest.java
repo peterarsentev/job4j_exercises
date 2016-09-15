@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  */
 public class PoolTest {
     @Test
-    public void multi() {
+    public void whenFieldHasMultiUnionThenReturnMax() {
         Pool pool = new Pool(
                 new int[][] {
                         {1, 0, 0},
@@ -28,7 +28,20 @@ public class PoolTest {
     }
 
     @Test
-    public void one() {
+    public void whenUnionInLastLineThenFour() {
+        Pool pool = new Pool(
+                new int[][] {
+                        {1, 0, 0},
+                        {0, 1, 1},
+                        {0, 1, 1}
+                }
+        );
+        int result = pool.maxUnion();
+        assertThat(result, is(4));
+    }
+
+    @Test
+    public void whenAllFieldUnionThenReturnTotalSize() {
         Pool pool = new Pool(
                 new int[][] {
                         {1, 1, 1},
