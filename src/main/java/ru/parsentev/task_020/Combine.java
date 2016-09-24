@@ -3,6 +3,8 @@ package ru.parsentev.task_020;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -23,6 +25,35 @@ public class Combine {
     }
 
     public List<List<Integer>> generate() {
-        throw new UnsupportedOperationException();
+        return combinations(this.values);
+    }
+
+    private List<List<Integer>> combinations(int[] list) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (list.length == 2) {
+            result.add(Arrays.asList(list[0], list[1]));
+            result.add(Arrays.asList(list[1], list[0]));
+        } else {
+            for (int index=0;index!=list.length;index++) {
+                for (List<Integer> sample : this.combinations(this.create(list, index))) {
+                    List<Integer> comb = new ArrayList<>();
+                    comb.add(list[index]);
+                    comb.addAll(sample);
+                    result.add(comb);
+                }
+            }
+        }
+        return result;
+    }
+
+    private int[] create(int[] list, int exclude) {
+        int[] result = new int[list.length-1];
+        int pos = 0;
+        for (int index=0;index!=list.length;index++) {
+            if (index != exclude) {
+                result[pos++] = list[index];
+            }
+        }
+        return result;
     }
 }

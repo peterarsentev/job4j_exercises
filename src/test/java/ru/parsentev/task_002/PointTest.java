@@ -2,9 +2,8 @@ package ru.parsentev.task_002;
 
 import org.junit.Test;
 
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.number.IsCloseTo.closeTo;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * TODO: comment
