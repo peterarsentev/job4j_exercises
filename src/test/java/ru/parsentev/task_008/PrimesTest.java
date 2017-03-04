@@ -22,6 +22,6 @@ public class PrimesTest {
     public void calc() {
         Primes primes = new Primes(3);
         List<Integer> result = primes.calc();
-        assertThat(result, is(asList(1, 2, 3)));
+        assertThat(result, is(asList(2, 3)));
     }
 }
