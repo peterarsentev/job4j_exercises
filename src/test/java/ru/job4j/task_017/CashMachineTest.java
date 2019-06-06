@@ -2,12 +2,8 @@ package ru.job4j.task_017;
 
 import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.Arrays;
 import java.util.List;
-
 import static java.util.Arrays.asList;
-import static java.util.Collections.list;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

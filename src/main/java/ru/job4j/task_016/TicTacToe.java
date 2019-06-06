@@ -1,9 +1,5 @@
 package ru.job4j.task_016;
 
-
-
-
-
 /**
  * TODO: comment
  *
