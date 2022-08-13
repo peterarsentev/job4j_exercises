@@ -8,13 +8,13 @@ import java.io.PrintStream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public class Task13Test {
-
+public class Task15Test {
     @Test
-    public void whenDelimiterIsPastedBetweenLettersOfString() {
+    public void eachSequenceOfSameSymbolsOnSeparateLine() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        Task13.main(null);
-        assertThat(out.toString(), is("H-e-l-l-o-,-f-r-i-e-n-d!"));
+        Task15.main(null);
+        String expected = String.format("+++%S!!!!%S??", System.lineSeparator(), System.lineSeparator());
+        assertThat(out.toString(), is(expected));
     }
 }
