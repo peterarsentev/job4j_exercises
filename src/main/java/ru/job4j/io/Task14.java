@@ -2,12 +2,10 @@ package ru.job4j.io;
 
 public class Task14 {
     public static void main(String[] args) {
-        String source = "+!?";
         // YOUR CODE
-        String[] symbols = source.split("");
-        String string = symbols[0].repeat(3) + System.lineSeparator() +
-                symbols[1].repeat(4) + System.lineSeparator() +
-                symbols[2].repeat(2);
-        System.out.print(string);
+        String greeting = "Hello, friend!";
+        String[] split = greeting.replaceAll("\\s+", "").split("");
+        String result = String.join("-", split).replace("-!", "!");
+        System.out.print(result);
     }
 }
