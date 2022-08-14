@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.is;
 
 public class Task16Test {
     @Test
-    public void eachSequenceOfSameSymbolsOnSeparateLine() {
+    public void eachSequenceOfSameSymbolsOnOneLine() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Task16.main(null);
